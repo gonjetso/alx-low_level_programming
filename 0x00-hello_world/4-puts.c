@@ -1,11 +1,8 @@
 #include<stdio.h>
+
 /** 
- * Main: this is where the program starts
- * and is found in all C programs
- *
+ * main - this is where the program starts
  * Description: printing using puts is easier than printf
- * this is a better description
- *
  * Return: ending the program
  */
 
