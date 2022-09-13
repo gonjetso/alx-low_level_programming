@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * main - check the code
+ * main - main code
  *
- * print_alphabet: print alphabet
+ * print_alphabet - print alphabet
  *
- * Return: Always 0.
+ * Return: Always zero
  */
 void print_alphabet(void)
 {
