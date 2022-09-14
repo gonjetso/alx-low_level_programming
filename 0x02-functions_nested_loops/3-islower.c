@@ -7,20 +7,14 @@
  *
  * Return: Always zero or one
  */
-void print_alphabet_x10(void)
+int _islower(int c)
 {
-	int alphacount = 0;
-
-	while (alphacount < 10)
+	if (c >= 'a' && c <= 'z')
 	{
-		char alpha = 'a';
-
-		while (alpha <= 'z')
-		{
-			_putchar(alpha);
-			alpha++;
-		}
-		alphacount++;
-		_putchar('\n');
+		return (1);
+	}
+	else
+	{
+		return (0);
 	}
 }
