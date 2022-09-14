@@ -1,26 +1,29 @@
 #include "main.h"
 
 /**
- * print_last_digit - last digit
+ * print_to_98 - last digit
  *
- * @n:n is int
+ * @n: number
  *
- * Return: lastdig
+ * Return: yes
  */
-int print_last_digit(int n)
+void print_to_98(int n)
 {
-	int lastdig;
+	int num;
 
-	if (n < 0)
+	if (n > 98)
 	{
-		lastdig = -1 * (n % 10);
-		_putchar(lastdig + '0');
-		return (lastdig);
+		for (num = n; num > 98; --num)
+		{
+			printf("%d, ", num);
+		}
 	}
 	else
 	{
-		lastdig = n % 10;
-		_putchar(lastdig + '0');
-		return (lastdig);
+		for (num = n; num < 98; ++num)
+		{
+			printf("%d, ", num);
+		}
 	}
+	printf("98\n");
 }
