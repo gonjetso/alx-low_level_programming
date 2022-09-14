@@ -8,57 +8,36 @@
  * Return: lastdigit
  */
 void print_times_table(int n)
+
 {
-	int x, y, z;
+	int cat, dog, fly;
 
-	if (n >= 0 && n <= 15)
+	if (n <= 15 && n >= 0)
 	{
-		for (x = 0; x <= n; x++)
+		for (fly = 0; fly <= n; ++fly)
 		{
-			for (y = 0; y <= n; y++)
+			_putchar(48);
+			for (dog = 1; dog <= n; ++dog)
 			{
-				z = x * y;
-				if (y == 0)
-				{
-					_putchar(z + '0');
-				}
-				else if (z < 10 && y != 0)
-				{
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar('z + '0');
-				}
-				else if (z >= 10 && z < 100)
-				{
-					_putchar(', ');
-					_putchar(' ');
-					_putchar(' ');
-					_putchar((z / 10) + '0');
-					_putchar((z % 10) + '0');
-				}
-				else if (z >= 100)
-				{
-					_putchar(', ');
-					_putchar(' ');
-					_putchar((z / 100) + '0');
-					_putchar(((z / 10) % 10) + '0');
-					_putchar((z % 10) + '0');
-				}
-			}
-	int lastdig;
+				_putchar(',');
+				_putchar(' ');
 
-	if (n < 0)
-	{
-		lastdig = -1 * (n % 10);
-		_putchar(lastdig + '0');
-		return (lastdig);
-	}
-	else
-	{
-		lastdig = n % 10;
-		_putchar(lastdig + '0');
-		return (lastdig);
+				cat = fly * dog;
+
+				if (cat <= 9)
+					_putchar(' ');
+				if (cat <= 99)
+					_putchar(' ');
+				if (cat >= 100)
+				{
+					_putchar((cat / 100) + 48);
+					_putchar((cat / 10) % 10 + 48);
+				}
+				else if (cat <= 99 && cat >= 10)
+					_putchar((cat / 10) + 48);
+				_putchar((cat % 10) + 48);
+			}
+			_putchar('\n');
+		}
 	}
 }
