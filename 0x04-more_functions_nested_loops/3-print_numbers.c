@@ -7,8 +7,9 @@ void print_numbers(void)
 {
 	int a = 0;
 
-	for (a; a < 10; ++a)
-	{
+	do {
 		_putchar(a);
-	}
+		a++;
+	} while (a >= 0 && a <= 9);
+	_putchar('\n');
 }
