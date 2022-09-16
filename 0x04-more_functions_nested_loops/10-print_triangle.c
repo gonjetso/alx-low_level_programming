@@ -1,20 +1,27 @@
+#include "main.h"
+
 /**
- * more_numbers - print some numbers from 0 to 9
+ * print_triangle - print triangle
+ * Description: print triangle
+ * @size: size
  * Return: 0
  */
 
-void more_numbers(void)
+void print_triangle(int size)
 {
-	int x, y;
+	int i, j;
 
-	for (x = 0; x < 10; x++)
+	for (i = 0; i < size; i++)
 	{
-		for (y = 0; y < 15; y++)
+		for (j = size - 1; j >= 0; j--)
 		{
-			if (y >= 10)
-				_putchar(y / 10 + '0');
-			_putchar(y % 10 + '0');
+			if (j <= i)
+				_putchar('#');
+			else
+				_putchar(' ');
 		}
-		_putchar('\n');
+		if (i != (size - 1))
+			_putchar('\n');
 	}
+	_putchar('\n');
 }
