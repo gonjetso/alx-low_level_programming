@@ -1,6 +1,6 @@
 /**
- * more_numbers - print some numbers from 0 to 9
- * Return: 0
+ * print_diagonal - print diagonal
+ * @n: number
  */
 
 void print_diagonal(int n)
