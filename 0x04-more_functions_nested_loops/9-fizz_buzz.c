@@ -1,20 +1,27 @@
+#include <stdio.h>
+
 /**
- * more_numbers - print some numbers from 0 to 9
- * Return: 0
+ * main - main
+ * Description: print numbers
+ * Return: Always zero
  */
 
-void more_numbers(void)
+int main(void)
 {
-	int x, y;
+	int i;
 
-	for (x = 0; x < 10; x++)
+	printf("1");
+	for (i = 2; i <= 100; i++)
 	{
-		for (y = 0; y < 15; y++)
-		{
-			if (y >= 10)
-				_putchar(y / 10 + '0');
-			_putchar(y % 10 + '0');
-		}
-		_putchar('\n');
+		if ((i % 3 == 0) && (i % 5 == 0))
+			printf(" FizzBuzz");
+		else if (i % 3 == 0)
+			printf(" Fizz");
+		else if (i % 5 == 0)
+			printf(" Buzz");
+		else
+			printf(" %d", i);
 	}
+	printf("\n");
+	return (0);
 }
