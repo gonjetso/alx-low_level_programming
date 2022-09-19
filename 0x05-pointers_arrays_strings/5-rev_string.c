@@ -1,21 +1,25 @@
 #include "main.h"
 
 /**
- * print_rev - prints a string
+ * rev_string - rev string
  * @s: pointer
  * Return: zero
  */
 
-void print_rev(char *s)
+void rev_string(char *s)
 {
-	int i = 0;
+	int i, str, mid;
+	char word;
 
-	while (s[i])
-		i++;
+	for (str = 0; s[str] != '\0'; str++)
+		;
 
-	while (i--)
+	i = 0;
+	mid = str / 2;
+
+	while (mid--)
 	{
-		_putchar(s[i]);
-	}
-	_putchar('\n');
-}
+		word = s[str - i - 1];
+		s[str - i - 1] = s[i];
+		s[i] = word;
+		i++;
