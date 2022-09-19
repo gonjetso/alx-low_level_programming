@@ -8,5 +8,7 @@ int _strlen(char *s);
 void _puts(char *str);
 void print_rev(char *s);
 void _putchar(char);
+char *_strcpy(char *dest, char *src);
+void print_array(int *a, int n);
 
 #endif /* MAIN_H */
