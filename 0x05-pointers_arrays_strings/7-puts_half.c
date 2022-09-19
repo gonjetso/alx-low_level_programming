@@ -1,21 +1,23 @@
 #include "main.h"
 
 /**
- * print_rev - prints a string
- * @s: pointer
+ * puts_half - prints a string
+ * @str: pointer
+ * Description: something
  * Return: zero
  */
 
-void print_rev(char *s)
+void puts_half(char *str)
 {
-	int i = 0;
+	int i;
 
-	while (s[i])
-		i++;
+	for (i = 0; str[i] != '\0'; i++)
+		;
 
-	while (i--)
+	i++;
+	for (i /= 2; str[i] != '\0'; i++)
 	{
-		_putchar(s[i]);
+		_putchar(str[i]);
 	}
 	_putchar('\n');
 }

@@ -1,21 +1,22 @@
 #include "main.h"
 
 /**
- * print_rev - prints a string
- * @s: pointer
+ * puts2 - prints a string
+ * @str: pointer
  * Return: zero
  */
 
-void print_rev(char *s)
+void puts2(char *str)
 {
 	int i = 0;
 
-	while (s[i])
-		i++;
-
-	while (i--)
+	while (str[i] != '\0')
 	{
-		_putchar(s[i]);
+		if (i % 2 == 0)
+		{
+			_putchar(str[i]);
+		}
+		i++;
 	}
 	_putchar('\n');
 }
