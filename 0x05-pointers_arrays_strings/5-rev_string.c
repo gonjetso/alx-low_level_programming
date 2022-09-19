@@ -23,3 +23,5 @@ void rev_string(char *s)
 		s[str - i - 1] = s[i];
 		s[i] = word;
 		i++;
+	}
+}
