@@ -1,29 +1,19 @@
 #include "main.h"
 
 /**
- * leet - leet
- * @s: character
+ * *string_toupper - toupper
+ * @str: pointer
  * Return: zero
  */
 
-char *leet(char *s)
+char *string_toupper(char *str)
 {
-	int i, j;
+	int i;
 
-	char s1[] = "aeotl";
-	char S1[] = "AEOTL";
-	char s2[] = "43071";
-
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (j = 0; j < 5; j++)
-		{
-			if (s[i] == s1[j] || s[i] == S1[j])
-			{
-				s[i] = s2[j];
-				break;
-			}
-		}
+		if (str[i] <= 'z' && str[i] >= 'a')
+			str[1] -= 32;
 	}
-	return (s);
+	return (str);
 }
