@@ -1,29 +1,22 @@
 #include "main.h"
 
 /**
- * leet - leet
- * @s: character
+ * reverse_array - reverse content of array
+ * @a: integer
+ * @n: integer
  * Return: zero
  */
 
-char *leet(char *s)
+void reverse_array(int *a, int n)
 {
 	int i, j;
 
-	char s1[] = "aeotl";
-	char S1[] = "AEOTL";
-	char s2[] = "43071";
+	i = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (j = n / 2; j > 0; j--, i++)
 	{
-		for (j = 0; j < 5; j++)
-		{
-			if (s[i] == s1[j] || s[i] == S1[j])
-			{
-				s[i] = s2[j];
-				break;
-			}
-		}
+		a[n - i - 1] += a[i];
+		a[i] = a[n - i - 1] - a[i];
+		a[n - i - 1] = a[n - i - 1] - a[i];
 	}
-	return (s);
 }
