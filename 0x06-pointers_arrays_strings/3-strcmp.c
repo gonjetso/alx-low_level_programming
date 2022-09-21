@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * int _strcmp - compare strings
+ * _strcmp - compare strings
  * @s1: string
  * @s2: string
  * Return: zero
