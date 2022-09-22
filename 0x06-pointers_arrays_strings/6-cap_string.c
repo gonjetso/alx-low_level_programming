@@ -1,29 +1,37 @@
 #include "main.h"
 
 /**
- * leet - leet
- * @s: character
+ * cap_string - leet
+ * @str: character
  * Return: zero
  */
 
-char *leet(char *s)
+char *cap_string(char *str)
 {
-	int i, j;
+	int i = 0;
 
-	char s1[] = "aeotl";
-	char S1[] = "AEOTL";
-	char s2[] = "43071";
-
-	for (i = 0; s[i] != '\0'; i++)
+	while (str[i])
 	{
-		for (j = 0; j < 5; j++)
-		{
-			if (s[i] == s1[j] || s[i] == S1[j])
-			{
-				s[i] = s2[j];
-				break;
-			}
-		}
+		while (!(str[i] >= 'a' && str[i] <= 'z'))
+			i++;
+
+		if (str[i - 1] == ' ' ||
+				str[i - 1] == '\t' ||
+				str[i - 1] == '\n' ||
+				str[i - 1] == ',' ||
+				str[i - 1] == ';' ||
+				str[i - 1] == '.' ||
+				str[i - 1] == '!' ||
+				str[i - 1] == '?' ||
+				str[i - 1] == '"' ||
+				str[i - 1] == '{' ||
+				str[i - 1] == '}' ||
+				str[i - 1] == '(' ||
+				str[i - 1] == ')' ||
+				i == 0)
+			str[i] -= 32;
+
+		i++;
 	}
-	return (s);
+	return (str);
 }
