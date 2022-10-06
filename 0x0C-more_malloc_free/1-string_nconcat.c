@@ -40,7 +40,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		if (i < str1)
 			word[i] = s1[i];
 		else
-			word[i] = s2[i - ls1];
+			word[i] = s2[i - str1];
 
 	word[i] = '\0';
 
