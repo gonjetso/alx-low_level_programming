@@ -1,26 +1,52 @@
-#include <stdio.h>
 #include "dog.h"
+#include <stdlib.h>
 
 /**
- * print_dog - function
- * @d: d
+ * new_dog - function
+ * @name: dog
+ * @age: age
+ * @owner: owner
  * Return: zero
  */
 
-void print_dog(struct dog *d)
+dog_t *new_dog(char *name, float age, char *owner)
 {
-	if (d)
+	int i, newname, newowner;
+	dog_t *dogpointer;
+
+	dogpointer = malloc(sizeof(*dogpointer));
+	if (dogpointer == NULL || !(name) || !(owner))
 	{
-		if (!(d->name))
-			printf("Name: (nil)\n");
-		else
-			printf("Name: %s\n", d->name);
-
-		printf("Age: %f\n", d->age);
-
-		if (!(d->owner))
-			printf("Owner: (nil)\n");
-		else
-			printf("Owner: %s\n", d->owner);
+		free(dogpointer);
+		return (NULL);
 	}
+
+	for (newname = 0; name[newname]; newname++)
+		;
+
+	for (newowner = 0; owner[newowner]; newowner++)
+		;
+
+	dogpointer->name = malloc(newname + 1);
+	dogpointer->owner = malloc(newowner + 1);
+
+	if (!(dogpointer->name) || !(dogpointer->owner))
+	{
+		free(dogpointer->owner);
+		free(dogpointer->name);
+		free(dogpointer);
+		return (NULL);
+	}
+
+	for (i = 0; i < newname; i++)
+		dogpointer->name[i] = name[i];
+	dogpointer->name[i] = '\0';
+
+	dogpointer->age = age;
+
+	for (i = 0; i < newowner; i++)
+		dogpointer->owner[i] = owner[i];
+	dogpointer->owner[i] = '\0';
+
+	return (dogpointer);
 }
