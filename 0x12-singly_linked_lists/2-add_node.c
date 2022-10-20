@@ -1,24 +1,29 @@
 #include "lists.h"
 
 /**
- * print_list - function
- * @h: h
+ * add_node - function
+ * @head: head
+ * @str: string
  * Return: zero
  */
 
-size_t print_list(const list_t *h)
+list_t *add_node(list_t **head, const char *str)
 {
-	size_t elements;
+	list_t *newnode;
+	size_t num;
 
-	elements = 0;
-	while (h != NULL)
-	{
-		if (h->str == NULL)
-			printf("[%d] %s\n", 0, "(nil)");
-		else
-			printf("[%d] %s\n", h->len, h->str);
-		h = h->next;
-		elements++;
-	}
-	return (elements);
+	newnode = malloc(sizeof(list_t));
+	if (newnode == NULL)
+		return (NULL);
+
+	newnode->str = strdup(str);
+
+	for (num = 0; str[num]; num++)
+		;
+
+	newnode->len = num;
+	newnode->next = *head;
+	*head = newnode;
+
+	return (*head);
 }
