@@ -1,24 +1,19 @@
 #include "lists.h"
 
 /**
- * print_list - function
- * @h: h
+ * free_list - function
+ * @head: head
  * Return: zero
  */
 
-size_t print_list(const list_t *h)
+void free_list(list_t *head)
 {
-	size_t elements;
+	list_t *thelist;
 
-	elements = 0;
-	while (h != NULL)
+	while ((thelist = head) != NULL)
 	{
-		if (h->str == NULL)
-			printf("[%d] %s\n", 0, "(nil)");
-		else
-			printf("[%d] %s\n", h->len, h->str);
-		h = h->next;
-		elements++;
+		head = head->next;
+		free(thelist->str);
+		free(thelist);
 	}
-	return (elements);
 }
