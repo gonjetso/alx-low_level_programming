@@ -1,25 +1,20 @@
 #include "main.h"
 
 /**
- * get_bit - function
- * @n: int
- * @index: index
+ * flip_bits - function
+ * @n: n
+ * @m: m
  * Return: zero
  */
-int get_bit(unsigned long int n, unsigned int index)
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
-	unsigned int x;
+	unsigned int num;
 
-	if (n == 0 && index < 64)
-		return (0);
-
-	for (x = 0; x <= 63; n >>= 1, x++)
+	for (num = 0; n || m; n >>= 1, m >>= 1)
 	{
-		if (index == x)
-		{
-			return (n & 1);
-		}
+		if ((n & 1) != (m & 1))
+			num++;
 	}
 
-	return (-1);
+	return (num);
 }
