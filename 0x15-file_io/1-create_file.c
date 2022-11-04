@@ -1,35 +1,34 @@
 #include "main.h"
 
 /**
- * read_textfile - function
+ * create_file - function
  * @filename: filename
- * @letters: letters
+ * @text_content: content
  * Return: zero
  */
-
-ssize_t read_textfile(const char *filename, size_t letters)
+int create_file(const char *filename, char *text_content)
 {
-	ssize_t rd, wr;
-	int f;
-	char *c;
+	int j, letters, rite;
 
 	if (!filename)
-		return (0);
+		return (-1);
 
-	f = open(filename, O_RDONLY);
+	j = open(filename, O_CREAT | O_WRONLY | O_TRUNC, 0600);
 
-	if (f == -1)
-		return (0);
+	if (j == -1)
+		return (-1);
 
-	c = malloc(sizeof(char) * (letters));
-	if (!c)
-		return (0);
+	if (!text_content)
+		text_content = "";
 
-	rd = read(f, c, letters);
-	wr = write(STDOUT_FILENO, c, rd);
+	for (letters = 0; text_content[letters]; letters++)
+		;
 
-	close(f);
-	free(c);
+	rite = write(j, text_content, letters);
 
-	return (wr);
+	if (rite == -1)
+		return (-1);
+
+	close(j);
+	return (1);
 }
