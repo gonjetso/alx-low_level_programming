@@ -11,18 +11,13 @@ This repository contains projects carried out under the low-level programming an
 <li>0x06. C - More pointers, arrays and strings</li>
 <li>0x07. C - Even more pointers, arrays and strings</li>
 <li>0x08. C - Recursion</li>
-<li>0x09. C - Static libraries</li>
 <li>0x0A. C - argc, argv</li>
 <li>0x0B. C - malloc, free</li>
 <li>0x0C. C - More malloc, free</li>
 <li>0x0D. C - Preprocessor</li>
 <li>0x0E. C - Structures, typedef</li>
-<li>0x0F. C - Function pointers</li>
 <li>0x10. C - Variadic functions</li>
-<li>0x11. C - printf</li>
 <li>0x12. C - Singly linked lists</li>
-<li>0x13-more_singly_linked_lists</li>
-<li>0x14-bit_manipulation</li>
 <li>0x15-file_io</li>
 
 <h1>Author</h1>
