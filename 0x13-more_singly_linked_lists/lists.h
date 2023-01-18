@@ -2,7 +2,7 @@
 #define LISTS_H
 
 /*
- * Desc: Header file with prototypes and definitions
+ * Desc: header file with prototypes and definitions
  */
 
 #include <stdlib.h>

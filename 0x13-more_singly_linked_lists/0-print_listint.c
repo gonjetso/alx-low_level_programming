@@ -5,7 +5,7 @@
  * print_listint - Elements of listint_t list
  * @h: Head of list_t list
  *
- * Return: Count of nodes in the list_t list.
+ * Return: Count of nodes in the list_t list
  */
 size_t print_listint(const listint_t *h)
 {
